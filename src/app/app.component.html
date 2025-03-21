@@ -1,36 +1,29 @@
-<body style="background-color: #90639e;  margin: 0; padding: 0;">
-  <div class="d-flex flex-column align-items-center justify-content-center  " style="min-height: 100dvh;">
-    <div class="card" style="width: 25rem;">
-      <div class="card-body">
-        <h1 class="card-title text-center mb-3" style="color: #67127c;">Comparador</h1>
-        <h4 class="card-subtitle mb-3 text-center" style="color: #5e5d5e;">Insira 2 valores e verifique se o primeiro é maior, menor ou igual ao segundo:</h4>
-  
-        <div class="input-group mb-2"> <!--input para copiar e colar-->
-          <input type="number"  class="form-control form-control-lg" placeholder="Insira o 1° número" [(ngModel)]="num1" (keydown.enter)="verificarnumeros()">
+<body style="background-color: #7D4F9E; margin: 0; padding: 0;">
+  <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="card shadow-lg" style="width: 28rem; border-radius: 15px;">
+      <div class="card-body text-center">
+        <h1 class="card-title mb-3" style="color: #4A0E5E; font-weight: bold; font-size: 45px;">Comparador</h1>
+        <h4 class="card-subtitle mb-4 text-center" style="color: #5e5d5e; font-size: 25px;">Insira 2 valores e verifique se o primeiro é maior, menor ou igual ao segundo:</h4>
+
+        <div class="mb-3">
+          <input type="number" class="form-control form-control-lg text-center" placeholder="Insira o 1° número" [(ngModel)]="num1" (keydown.enter)="verificarnumeros()">
         </div>
-        <div class="input-group mb-4"> <!--input para copiar e colar-->
-          <input type="number"  class="form-control form-control-lg" placeholder="Insira o 2° número" [(ngModel)]="num2" (keydown.enter)="verificarnumeros()" >
-        </div>
-  
-        <div class="d-flex flex-column align-items-center mb-4"> <!--botao pra copiar e colar-->
-          <button type="button" class="btn btn-primary mb-2"  style="background-color: #67127c; width: 350px; font-size: 22px;" (click)="verificarnumeros()">Compare os números</button> <!--puxa uma funcao do ts quando o botao é clicado-->
-        </div>
-        
-        <div  class="d-flex flex-column align-items-center "> <!--campo de resultado pra copiar e colar-->
-          <p for="resultado" style="font-size: 28px; color: #5e5d5e; font-weight: bold ;  border: 1px solid black;  border-radius: 3px; padding: 8px; width: auto; height: auto;" class="mb-3 text-center" >
-            O primeiro número é
-          </p>
-          <p id="maior" style="font-size: 28px;  color: #67127c; font-weight: bold ;  text-decoration: underline;   border-radius: 3px; padding: 8px; width: auto ; height: auto;" class="text-center ">
-            {{resultado}}<!--pega info do ts e mostra no html--> <!--o que esta dentro das chaves é o nome da variavel e nao a funçao-->
-          </p>
-          <p for="resultado" style="font-size: 28px; color: #5e5d5e; font-weight: bold ;  border: 1px solid black;  border-radius: 3px; padding: 8px; width: auto; height: auto;" class="mb-3 text-center" >
-            do que o segundo número
-          </p>
+        <div class="mb-4">
+          <input type="number" class="form-control form-control-lg text-center" placeholder="Insira o 2° número" [(ngModel)]="num2" (keydown.enter)="verificarnumeros()">
         </div>
 
+        <button type="button" class="btn btn-lg mb-3" style="background-color: #4A0E5E; color: white; width: 100%; font-size: 25px; border-radius: 10px;" (click)="verificarnumeros()">Compare os números</button>
 
-      
-        
+        <div class="result-box mt-3 p-3 rounded" style="background-color: #D9C2E1; border: 1px solid #4A0E5E;">
+          <h4 class="mb-0" style="color: #4A0E5E; font-weight: bold;">Resultado:</h4>
+          <p id="resultado" style="font-size: 30px; font-weight: bold; color: black; text-decoration: underline; margin-bottom: 0;">
+            {{resultado}}
+          </p>
+          <p id="comparacao" style="font-size: 30px; font-weight: bold; color: #4A0E5E; text-decoration: underline; margin-bottom: 0;">
+            {{comparacao}}
+          </p>
+
+        </div>
       </div>
     </div>
   </div>
